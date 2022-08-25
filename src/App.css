@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+
+
+body{
+  background-color: #f7fafc;
+}
+.container-stack {
+  max-width: 80rem;
+  padding: 6rem 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.stack {
   display: flex;
   flex-direction: column;
+
+}
+
+
+.stack-left{
+  display: flex;
+  flex-direction: column;
+  max-width: 28rem;
+}
+.stack-para{
+  color: #3182ce;
+  font-weight: 600;
+}
+.stack-title{
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  letter-spacing:-0.025em;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+.stack-para-2{
+  color: #4a5568;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  max-width: 48rem;
+}
+.stack-right{
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0px, 1fr));
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2rem;
+  flex: 1 1 0%;
+  margin-top: 3rem;
+}
+.card{
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 1px rgba(48, 49, 51, 0.05),0px 8px 16px rgba(48, 49, 51, 0.1);;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.card-pop{
+  display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: #3182ce;
   color: white;
+  position: absolute;
+  right: -2.5rem;
+  top: 0.7rem;
+  transform: rotate(45deg);
+  padding: 0.5rem 3rem;
+  height: 35px;
 }
-
-.App-link {
-  color: #61dafb;
+.card-pop p{
+  font-weight: 600;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-desc{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card-price-wrap{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.card-price{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+.card-price-tag{
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3.75rem;
+  margin: 0;
+}
+.card-detail{
+  display: flex;
+  flex-direction: column;
+}
+.card-list{
+  list-style-type: none;
+  margin-top: 0.25rem;
+  padding: 0;
+  width: 100%;
+}
+.card-list-entry{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: row;
+}
+.card-tick{
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background: #ebf8ff;
+}
+.card-list-para{
+  margin-left: 0.75rem;
+}
+.card-btn{
+    display: inline-flex;
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    line-height: 1.2;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;;
+    transition-duration: 200ms;
+    height: 3rem;
+    min-width: 3rem;
+    font-size: 1rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+    background: #3182ce;
+    color: #ffffff;
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .stack-para-2{
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
   }
-  to {
-    transform: rotate(360deg);
+  .stack-right{
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+    margin-top: 4rem;
+  }
+  .card{
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .stack {
+    flex-direction: row;
+  }
+  .stack-right{
+    margin-left: 4rem;
+    margin-top: 0;
   }
 }
